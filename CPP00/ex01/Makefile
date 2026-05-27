@@ -1,20 +1,26 @@
 NAME	= phonebook
+WINDOW	= executables/phonebookwindow
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= main.c
+SRCS	= window.cpp PhoneBook.cpp Contact.cpp
+MAIN	= main.cpp
 
 all: $(NAME)
 
-$(NAME): 
-	$(GCC) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(WINDOW)
+	$(GCC) $(CFLAGS) $(MAIN) -o $(NAME)
+
+$(WINDOW):
+	@mkdir -p executables
+	$(GCC) $(CFLAGS) $(SRCS) -o $(WINDOW)
 
 clean:
-	@echo "Theres only executable, execute make fclean."
+	@echo "There's only executables."
 
 fclean:
-	rm -rf $(NAME)
+	rm -rf $(NAME) executables
 
 re: fclean all
 

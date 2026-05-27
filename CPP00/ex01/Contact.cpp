@@ -1,78 +1,47 @@
 #include "./Contact.hpp"
 
-static bool isInRange(const std::string str, const size_t min, const size_t max)
+static std::string convertToPositive(std::string phonenumber)
 {
-	return min <= str.length() && str.length() <= max;
-}
+	std::string	newNum;
 
-static bool isInRange(const std::string str, const size_t max)
-{
-	return str.length() <= max;
-}
-
-Contact::Contact(std::string name, std::string surname, std::string phonenum, std::string info)
-{
-	if (name.empty() || !isInRange(name, 0, 8))
+	for (size_t i = 0; i < phonenumber.length(); i++)
 	{
-		std::cout << "Name must include minimum 1 letter and maximum 8 letter." << std::endl;
-		return ;
+		if (phonenumber[i] == '-' || phonenumber[i] == '+' || std::isspace(phonenumber[i]))
+			continue;
+		newNum += phonenumber[i];
 	}
-	if (surname.empty() || !isInRange(surname, 0, 10))
-	{
-		std::cout << "Surname must include minimum 1 letter and maximum 10 letter." << std::endl;
-		return ;
-	}
-	if (phonenum.empty())
-	{
-		std::cout << "Empty phone number is not allowed!" << std::endl;
-		return ;
-	}
-	if (!isInRange(info, 250))
-		std::cout << "Info can't exceed 250 characters. Set as empty." << std::endl;
-	else
-		_info = info;
-	
-	_name = name;
-	_surname = surname;
-	_phonenum = phonenum;
+
+	return newNum.empty() ? "0" : newNum;
 }
 
-std::string Contact::get_name()
+Contact::Contact() : _firstname(""), _lastname(""), _nickname(""),
+	_phonenumber(""), _darkestsecret("") { }
+
+std::string Contact::get_firstname() const { return _firstname; }
+
+std::string Contact::get_lastname() const { return _lastname; }
+
+std::string Contact::get_nickname() const { return _nickname; }
+
+std::string Contact::get_phonenumber() const { return _phonenumber; }
+
+std::string	Contact::get_darkestsecret() const { return _darkestsecret; }
+
+void		Contact::set_firstname(std::string firstname) { _firstname = firstname; }
+
+void		Contact::set_lastname(std::string lastname) { _lastname = lastname; }
+
+void		Contact::set_nickname(std::string nickname) { _nickname = nickname; }
+
+void		Contact::set_phonenumber(std::string phonenumber) { _phonenumber = convertToPositive(phonenumber); }
+
+void		Contact::set_darkestsecret(std::string darkestsecret) { _darkestsecret = darkestsecret; }
+
+void		Contact::copy_data(Contact& other)
 {
-	return _name;
-}
-
-std::string Contact::get_surname()
-{
-	return _surname;
-}
-
-std::string Contact::get_phonenum()
-{
-	return _phonenum;
-}
-
-std::string	Contact::get_info()
-{
-	return _info;
-}
-
-void		Contact::set_name(std::string name)
-{
-
-}
-
-void		Contact::set_surname(std::string surname)
-{
-
-}
-
-void		Contact::set_phonenum(std::string phonenum)
-{
-
-}
-
-void		Contact::set_info(std::string info)
-{
-	
+	_firstname = other._firstname;
+	_lastname = other._lastname;
+	_nickname = other._nickname;
+	_phonenumber = other._phonenumber;
+	_darkestsecret = other._darkestsecret;
 }
