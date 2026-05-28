@@ -1,9 +1,9 @@
-NAME	= megaphone
+NAME	= replace
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= Megaphone.cpp
+SRCS	= main.cpp
 
 all: $(NAME)
 
@@ -14,7 +14,7 @@ clean:
 	@echo "Theres only executable, execute make fclean."
 
 fclean:
-	rm -rf $(NAME)
+	rm -rf $(NAME) *.replace
 
 re: fclean all
 

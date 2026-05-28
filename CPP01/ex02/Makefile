@@ -1,9 +1,9 @@
-NAME	= megaphone
+NAME	= adresspractice
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= Megaphone.cpp
+SRCS	= main.cpp
 
 all: $(NAME)
 

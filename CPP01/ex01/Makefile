@@ -1,9 +1,9 @@
-NAME	= megaphone
+NAME	= HordeeEe
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= Megaphone.cpp
+SRCS	= main.cpp Zombie.cpp zombieHorde.cpp
 
 all: $(NAME)
 

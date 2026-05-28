@@ -1,11 +1,9 @@
-NAME	= megaphone
+NAME	= harl
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= Megaphone.cpp
-
-all: $(NAME)
+SRCS	= main.cpp Harl.cpp
 
 $(NAME):
 	$(GCC) $(CFLAGS) $(SRCS) -o $(NAME)

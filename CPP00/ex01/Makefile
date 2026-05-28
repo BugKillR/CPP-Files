@@ -4,8 +4,8 @@ WINDOW	= executables/phonebookwindow
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= window.cpp PhoneBook.cpp Contact.cpp
-MAIN	= main.cpp
+SRCS	= Window.cpp PhoneBook.cpp Contact.cpp
+MAIN	= Main.cpp
 
 all: $(NAME)
 
