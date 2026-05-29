@@ -1,9 +1,9 @@
-NAME	= bsp
+NAME	= claptrap
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= main.cpp Fixed.cpp Point.cpp
+SRCS	= main.cpp ClapTrap.cpp
 
 all: $(NAME)
 
