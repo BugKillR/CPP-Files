@@ -1,9 +1,9 @@
-NAME	= firstAwaken
+NAME	= smartanimals
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= main.cpp ClapTrap.cpp
+SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 all: $(NAME)
 

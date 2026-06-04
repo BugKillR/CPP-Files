@@ -1,23 +1,23 @@
 #include "./ClapTrap.hpp"
 
-int	main(void) {
-	ClapTrap	c1;
+int	main(void)
+{
+	ClapTrap	*c1 = new ClapTrap("Ali");
+	ClapTrap	*c2 = new ClapTrap(*c1);
+	ClapTrap	*c3 = new ClapTrap("Doruk");
 
-	c1.setName("Ersin");
+	*c3 = *c2;
 
-	c1.attack("Doruk");
-	c1.takeDamage(3);
-	c1.setAttackDamage(5);
-	c1.attack("Doruk");
-	c1.beRepaired(4);
-	c1.takeDamage(5);
-	c1.beRepaired(3);
-	std::cout << c1.getName() << "'s current health: " << c1.getHitPoint() << std::endl;
-	c1.takeDamage(9);
+	delete c1;
+	delete c2;
+	delete c3;
 
-	c1.attack("Kemal");
-	c1.takeDamage(5);
-	c1.beRepaired(7); 
+	ClapTrap	c4("Kayra");
+	c4.attack("Ege");
+	c4.takeDamage(5);
+	c4.beRepaired(2);
+	c4.takeDamage(8);
+	c4.attack("Ege");
 
 	return 0;
 }

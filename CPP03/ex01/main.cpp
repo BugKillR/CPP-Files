@@ -1,36 +1,32 @@
 #include "./ClapTrap.hpp"
 #include "./ScavTrap.hpp"
 
-int	main(void) {
-	ClapTrap	c1("ClapTrap", "Ersin");
-	ScavTrap	s1("ScavTrap", "Atacan");
-	
+int main(void)
+{
+    ClapTrap    tuna("Tuna");
+    ScavTrap    mehmet("Mehmet");
+    ClapTrap    ali("Ali");
 
-	c1.attack("Atacan");
-	c1.takeDamage(3);
-	c1.attack("Atacan");
-	c1.beRepaired(4);
-	c1.takeDamage(5);
-	c1.beRepaired(3);
-	c1.takeDamage(9);
+    ali = mehmet;
 
-	c1.attack("Atacan");
-	c1.takeDamage(5);
-	c1.beRepaired(7); 
+    std::cout << "\n--- The battle begins ---\n" << std::endl;
 
-	s1.attack("Ersin");
-	s1.guardGate();
-	s1.takeDamage(37);
-	s1.takeDamage(37);
-	s1.attack("Ersin");
-	s1.beRepaired(25);
-	s1.takeDamage(33);
-	s1.beRepaired(12);
-	s1.takeDamage(61);
+    tuna.attack("Mehmet");
 
-	s1.attack("Ersin");
-	s1.takeDamage(7);
-	s1.beRepaired(7); 
+    mehmet.takeDamage(5);
+    mehmet.beRepaired(3);
 
-	return 0;
+    std::cout << std::endl;
+
+    mehmet.guardGate();
+
+    std::cout << std::endl;
+
+    mehmet.attack("Yagiz");
+    mehmet.takeDamage(50);
+    mehmet.attack("Yagiz");
+    mehmet.takeDamage(60);
+    mehmet.attack("Yagiz");
+
+    return 0;
 }

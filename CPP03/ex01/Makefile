@@ -1,4 +1,4 @@
-NAME	= ROBOTSSS
+NAME	= oneTwoThreeFightttt
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
