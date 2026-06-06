@@ -1,0 +1,20 @@
+#ifndef CURE_HPP
+# define CURE_HPP
+
+# include "./AMateria.hpp"
+# include "./ICharacter.hpp"
+
+class Cure {
+public:
+	Cure();
+	Cure(std::string const& type);
+	Cure(const Cure& other);
+	virtual ~Cure();
+
+	Cure&	operator=(const Cure& other);
+
+	virtual Cure*	clone() const;
+	virtual void	use(ICharacter& target);
+};
+
+#endif
