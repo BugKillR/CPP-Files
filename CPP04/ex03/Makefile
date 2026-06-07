@@ -1,9 +1,9 @@
-NAME	= abstractanimal
+NAME	= wizardclass
 
 GCC		= c++
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRCS	= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 all: $(NAME)
 

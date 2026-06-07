@@ -14,7 +14,3 @@ AMateria&	AMateria::operator=(const AMateria& other) {
 }
 
 std::string const&	AMateria::getType() const { return _type; }
-
-void				AMateria::use(ICharacter& target) { 
-	std::cout << "Material: \"* material feature " << getType() << " *\"" << std::endl;
-}

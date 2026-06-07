@@ -7,7 +7,6 @@
 class Ice : public AMateria {
 public:
 	Ice();
-	Ice(std::string const& type);
 	Ice(const Ice& other);
 	virtual ~Ice();
 

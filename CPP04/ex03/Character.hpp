@@ -2,12 +2,18 @@
 # define CHARACTER_HPP
 
 # include <iostream>
+# include <cstring>
 # include "./ICharacter.hpp"
+# include "./AMateria.hpp"
+
+// https://www.youtube.com/watch?v=_CgOLZMbILQ&list=RDOc4GkdgZ3jE&index=13
 
 class Character : public ICharacter {
 private:
 	std::string	_name;
 	AMateria*	_inventory[4];
+	AMateria*	_collector[1000];
+	int			_collectedCount;
 
 public:
 	Character();
